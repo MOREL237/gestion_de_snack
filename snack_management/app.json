@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "snack_management",
+    "slug": "snack_management",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "snackmanagement",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+       [
+    "expo-camera",
+    {
+      "cameraPermission": "Autorise l'accès à la caméra pour scanner le QR code de ta table."
+    }
+  ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
