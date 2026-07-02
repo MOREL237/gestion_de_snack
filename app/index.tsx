@@ -1,17 +1,17 @@
+import { View, Text, ScrollView, Pressable } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
 import {
-  QrCode,
-  ShieldCheck,
   Store,
   Truck,
+  QrCode,
   Wallet,
+  ShieldCheck,
   type LucideIcon,
 } from "lucide-react-native";
-import { Pressable, ScrollView, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
-import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
+import { Badge } from "@/components/ui/Badge";
 
 type ModuleStatus = "disponible" | "en_cours" | "a_venir";
 
@@ -30,7 +30,7 @@ const MODULES: ModuleEntry[] = [
     title: "Point de Vente",
     description: "Dashboard, commandes, stock, tables, analyses",
     icon: Store,
-    route: "/dashboard",
+    route: "/pos/dashboard",
     status: "disponible",
   },
   {
@@ -39,22 +39,22 @@ const MODULES: ModuleEntry[] = [
     description: "Stock, commandes reçues, équipe",
     icon: Truck,
     route: "/fournisseur/dashboard",
-    status: "a_venir",
+    status: "disponible",
   },
   {
     key: "client",
     title: "Client",
     description: "Scan table, menu, suivi de commande",
     icon: QrCode,
-    route: "/client/scan",
-    status: "a_venir",
+    route: "/scan",
+    status: "disponible",
   },
   {
     key: "finance",
     title: "Finance",
     description: "Revenus, rapports, chiffre journalier",
     icon: Wallet,
-    route: "/finance/rapports",
+    route: "/rapports",
     status: "a_venir",
   },
   {
@@ -62,7 +62,7 @@ const MODULES: ModuleEntry[] = [
     title: "Authentification",
     description: "Login / register employés",
     icon: ShieldCheck,
-    route: "/auth/login",
+    route: "/login",
     status: "a_venir",
   },
 ];

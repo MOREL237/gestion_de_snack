@@ -30,7 +30,13 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+       [
+    "expo-camera",
+    {
+      "cameraPermission": "Autorise l'accès à la caméra pour scanner le QR code de ta table."
+    }
+  ]
     ],
     "experiments": {
       "typedRoutes": true
