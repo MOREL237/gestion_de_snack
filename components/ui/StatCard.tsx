@@ -33,7 +33,7 @@ export function StatCard({
         variant === "critical" && "border border-critical/20"
       )}
     >
-      <View className="flex-row items-center justify-between">
+      <View className="min-h-[36px] justify-start gap-1">
         <View className="flex-row items-center gap-1">
           {Icon && (
             <Icon
@@ -43,10 +43,13 @@ export function StatCard({
           )}
           <Text className="text-body-sm text-on-surface-variant">{label}</Text>
         </View>
+
         {actionLabel && (
-          <Text className="text-[10px] uppercase font-medium text-critical">
-            {actionLabel}
-          </Text>
+          <View className="self-start px-1.5 py-0.5 rounded-full bg-critical/10">
+            <Text className="text-[10px] uppercase font-medium text-critical">
+              {actionLabel}
+            </Text>
+          </View>
         )}
       </View>
 

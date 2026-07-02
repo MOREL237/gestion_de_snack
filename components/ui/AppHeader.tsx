@@ -15,7 +15,7 @@ export function AppHeader({
   notificationCount = 0,
 }: AppHeaderProps) {
   return (
-    <View className="flex-row items-center justify-between h-14 px-md bg-surface-lowest border-b border-outline-variant">
+    <View className="flex-row items-center justify-between h-14 px-md bg-surface border-b border-outline-variant">
       <View className="flex-row items-center gap-2">
         {onPressMenu && (
           <Pressable onPress={onPressMenu} hitSlop={8}>
