@@ -1,20 +1,11 @@
-import { useState } from "react";
 import { View, Text, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import {
-  ClipboardList,
-  AlertTriangle,
-  Wallet,
-  Package,
-  BarChart3,
-  User,
-} from "lucide-react-native";
+import { ClipboardList, AlertTriangle, Wallet } from "lucide-react-native";
 
 import { AppHeader } from "@/components/ui/AppHeader";
 import { StatCard } from "@/components/ui/StatCard";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
-import { BottomTabBar, type TabItem } from "@/components/ui/BottomTabBar";
 
 import { OrderCard } from "@/components/modules/order/OrderCard";
 import { StockAlertRow } from "@/components/modules/stock/StockAlertRow";
@@ -38,16 +29,7 @@ const MOCK_STOCK_ALERTS = [
   { id: "2", productName: "Arctic Flow Vodka", remaining: 1 },
 ];
 
-const TABS: TabItem[] = [
-  { key: "inventaire", label: "Inventaire", icon: Package },
-  { key: "commandes", label: "Commandes", icon: ClipboardList },
-  { key: "analyses", label: "Analyses", icon: BarChart3 },
-  { key: "profil", label: "Profil", icon: User },
-];
-
 export default function DashboardPOSScreen() {
-  const [activeTab, setActiveTab] = useState("inventaire");
-
   return (
     <SafeAreaView className="flex-1 bg-surface" edges={["top"]}>
       <AppHeader title="Gestion de Snack" notificationCount={2} />
@@ -149,8 +131,6 @@ export default function DashboardPOSScreen() {
           />
         </Card>
       </ScrollView>
-
-      <BottomTabBar tabs={TABS} activeKey={activeTab} onChange={setActiveTab} />
     </SafeAreaView>
   );
 }
